@@ -103,6 +103,7 @@ public class Weapon : MonoBehaviour
         if (!gameObject.activeInHierarchy) return;
         //if the time is not enough between shots return
         if (Time.time - lastShotTime < def.delayBetweenShots) { return; }
+        audioManager.instance.shoot.Play();
         projectile p;
         Vector3 vel = Vector3.up * def.velocity;
         if (transform.up.y < 0)

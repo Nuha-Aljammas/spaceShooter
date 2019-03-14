@@ -12,19 +12,17 @@ public class startMenu : MonoBehaviour
 
     }
 
-    //if you click on config botton
-    public void config()
+   public void click()
     {
-        //make other buttons disappear
-
+        transform.SetAsLastSibling();
     }
 
     public void exitClick()
     {
         Application.Quit();
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying=false;
-#endif
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying=false;
+        #endif
     }
 }

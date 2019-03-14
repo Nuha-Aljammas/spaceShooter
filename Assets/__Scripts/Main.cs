@@ -2,11 +2,13 @@
 using System.Collections.Generic; // Required to use Lists or Dictionaries
 using UnityEngine; // Required for Unity
 using UnityEngine.SceneManagement; // For loading & reloading of scenes
+using UnityEngine.UI;
+
 public class Main : MonoBehaviour
 {
     static public Main S; // A singleton for Main
     static Dictionary <WeaponType, WeaponDefinition> WEAP_DICT;
-
+    private bool paused;
 
     [Header("Set in Inspector")]
     public GameObject[] prefabEnemies; // Array of Enemy prefabs
@@ -19,6 +21,45 @@ public class Main : MonoBehaviour
         WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield };
 
     private BoundsCheck bndCheck;
+
+    [SerializeField]
+    private Text scoretxt;
+
+    [SerializeField]
+    private Text timertxt;
+
+
+
+    private int _score;
+    public int score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+            scoretxt.text = "Score: " + value;
+        }
+    }
+
+
+
+    private float Startime, _timer;
+
+
+
+    public float timer
+    {
+        get { return _timer; }
+        set
+        {
+            _timer = value;
+            timertxt.text = "Time: " + (int)value;
+        }
+    }
+
+
+
+
 
     //potentially generate power up
     public void shipDestroyed(Enemy e)
@@ -36,6 +77,7 @@ public class Main : MonoBehaviour
     }
     void Awake()
     {
+        Startime = Time.time;
         S = this;
         // Set bndCheck to reference the BoundsCheck component on this
          bndCheck = GetComponent<BoundsCheck>();
@@ -49,6 +91,12 @@ public class Main : MonoBehaviour
             WEAP_DICT[def.type] = def;
         }
     }
+
+    void Update()
+    {
+        timer = Time.time - Startime;
+    }
+
     public void SpawnEnemy()
     {
         // Pick a random Enemy prefab to instantiate
@@ -103,5 +151,21 @@ public class Main : MonoBehaviour
         // which means it has failed to find the right WeaponDefinition
 
         return (new WeaponDefinition());
+    }
+
+    public void onPause()
+    {
+        if(paused == true)
+        {
+            Time.timeScale = 1.0f;
+            paused = false;
+        }
+
+        else
+        {
+            paused = true;
+            Time.timeScale = 0;
+        }
+
     }
 }

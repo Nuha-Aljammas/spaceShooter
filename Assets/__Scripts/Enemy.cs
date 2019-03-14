@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed = 10f; // The speed in m/s
     public float fireRate = 0.3f; // Seconds/shot 
     public float health = 10;
-    public int score = 100; // Points earned for destroying this
+    public int score = 10; // Points earned for destroying this
     public float showDamageDuration = 0.1f; // # seconds to show damage 
     public float powerUpDropChance = 1f;
 
@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour
         {
             originalColors[i] = materials[i].color;
         }
+        Debug.Log(this.score);
+
     }
 
 
@@ -89,6 +91,9 @@ public class Enemy : MonoBehaviour
                     if (!notifiedOfDestruction)
                     {
                         Main.S.shipDestroyed(this);
+                        Main.S.score += this.score;
+                        audioManager.instance.distroy.Play();
+                        
                     }
                     notifiedOfDestruction = true;
                     Destroy(this.gameObject);
