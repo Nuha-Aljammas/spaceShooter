@@ -8,13 +8,58 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/stratScene.unity
+    path: Assets/Rock/Scenes/rock.unity
+    guid: 99f4152fe4a4fe4459dafc1f0c993ddf
+  - enabled: 0
+    path: Assets/Apple/Scenes/Apple.unity
+    guid: 3937df90da852ab48aefe3741c359233
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/shooter/Scenes/winScene.unity
+    guid: b6549f42d5187e24e9e4953c88e9e9ec
+  - enabled: 1
+    path: Assets/shooter/Scenes/stratScene.unity
     guid: 98abd330accd0d8428d3c6dbbfe97a67
   - enabled: 1
-    path: Assets/Scenes/settingScene.unity
+    path: Assets/shooter/Scenes/settingScene.unity
     guid: 47b0212bf699ade4badc0a5334327ac6
   - enabled: 1
-    path: Assets/Scenes/_Scene_0.unity
+    path: Assets/shooter/Scenes/GameOver.unity
+    guid: 4db7554c0a7a02447b90ba93153d8dd8
+  - enabled: 1
+    path: Assets/shooter/Scenes/_Scene_0.unity
     guid: 08556343fc6e2274b9c4918b562e179b
+  - enabled: 1
+    path: Assets/apple/Scenes/_Scene_a.unity
+    guid: 25bf1739126efe44c92a4232a8e78b1d
+  - enabled: 1
+    path: Assets/matcher/Scenes/winningScene.unity
+    guid: 49b128c326aae0e43aabe7109cadd45a
+  - enabled: 1
+    path: Assets/matcher/Scenes/sScene.unity
+    guid: 4db449cc882aae54ca6a6a04e5fb5b2f
+  - enabled: 1
+    path: Assets/matcher/Scenes/PlayScene.unity
+    guid: 7299682cba65fdf42a546d4b6cf06f75
+  - enabled: 1
+    path: Assets/matcher/Scenes/MainScene.unity
+    guid: 93861a547a5494346afc57fa196bdad7
+  - enabled: 1
+    path: Assets/Framework/game.unity
+    guid: b7c659834b91a3a4eb390b4403264413
+  - enabled: 1
+    path: Assets/matcher/Scenes/ExitScene.unity
+    guid: 349958d72471dae4ebb86fa40324eb5f
+  - enabled: 1
+    path: Assets/matcher/Scenes/loosingScene.unity
+    guid: c71478120dd31664997cf31a8a34c749
   m_configObjects: {}
